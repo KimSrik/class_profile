@@ -13,11 +13,217 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
+
     <style>
-        img{
-            display: none;
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        
+
+        :root{
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #000;
         }
 
+        .container{
+            margin: 0 16px;
+        }
+
+        .wrap{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .header{
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 60px;
+            padding: 20px 0;
+            background-color: rgb(177, 177, 255);
+
+            transition: 0.5s;
+        }
+        .header .inner{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 16px;
+        }
+        .inner img{
+            width: 30px;
+            height: 30px;
+            order: 1;
+        }
+        .logo{
+            order: 2;
+        }
+        
+        .logo span{            
+            font-size: 30px;
+            font-weight: 900;
+        }
+        .nav{
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 28px;
+
+            /* width: 30px; */
+            height: 30px;
+            order: 3;
+            transition: 0.5s;
+
+
+            font-size: 30px;
+            line-height: 18px;
+        }
+
+        .nav-list{
+            display: flex;
+            flex-flow: column;
+            
+        }
+        .nav-list li{
+            padding: 3px;
+            margin-bottom: 5px;
+            background-color: #fff;
+        }
+        .nav-list li:first-child{
+            margin-top: 10px;
+        }
+        .nav-list li:last-child{
+            margin-bottom: 0;
+        }
+
+
+        .header .inner::after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            order: 3;
+        }
+
+
+        /* sec01 */
+        .sec01{
+            height: 360px;
+            padding: 130px 0 30px 0;
+
+            display: flex;
+            flex-flow: column wrap;            
+            align-content: center;
+            align-items: center;
+        }
+        .sec01 img{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 50px 0;
+        }
+        .sec01 p{
+            font-size: 24px;
+            line-height: 18px;
+            font-weight: 700;
+        }
+
+        /* sec02 */
+        .sec02{
+            height: 240px;
+            padding: 30px 0;
+
+        }
+
+        .sec-tit{
+            display:flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sec-tit img{
+            width: 124px;
+            height: 160px;
+        }
+        .sec-tit h2{
+            width: 142px;
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 700;
+            
+        }
+        .sec-tit h2 span{
+            display: inline;
+            color: #7d7dff;
+        }
+        .sec02 p{
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        /* sec03 */
+        .sec03{
+            height: 230px;
+            margin-bottom: 30px;
+        }
+        .sec03 h2{
+            margin-bottom: 16px;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 700;
+            color: #7d7dff;
+            
+        }
+        .sec03 ul{
+            margin-bottom: 20px;
+        }
+        .sec03 ul:last-child{
+            margin-bottom: 10px;
+        }
+        .sec03 li{
+            font-size: 14px;
+            line-height: 16px;
+        }
+        /* sec04 */
+        .sec04{
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .sec04 h2{
+            font-size: 24px;
+            line-height: 24px;
+            color: #7d7dff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .sec04 li{
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        /* footer */
+        .footer{
+            margin-bottom: 20px;
+        }
+        .footer li{
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .footer p{
+            font-size: 10px;
+            line-height: 12px;
+        }
+        
 
     </style>
 
@@ -30,33 +236,116 @@
 <body>
     <section class="wrap">
         <header class="header">
-            <div class="container">
-                <div class="inner">                   
-                    <h1 class="logo">
-                        <a href="./index.html">
-                            <span>Srik's Profile</span>
-                        </a>
-                    </h1>    
+            <div class="inner">                   
+                <h1 class="logo">
+                    <a href="./index.html">
+                        <span>Srik's Profile</span>
+                    </a>
+                </h1>
+                <a href="./index.html">
                     <img src="./images/img-logo.png" alt="로고이미지">
-                    <div class="nav">
-                        <div class="nav-list">
-                            <li>
-                                <a href="#">I</a>
-                            </li>
-                            <li>
-                                <a href="#">L</a>
-                            </li>                            
-                            <li>
-                                <a href="#">C</a>
-                            </li>
-                        </div>
-                    </div>               
-                </div>
-            </div>
+                </a> 
+            </div>   
+                <div class="nav">
+                    <div class="nav-list">
+                        <li>
+                            <a href="#introduce">I</a>
+                        </li>
+                        <li>
+                            <a href="#lived">L</a>
+                        </li>                            
+                        <li>
+                            <a href="#contact">C</a>
+                        </li>
+                    </div>
+                </div>                           
         </header>
+        <section class="section sec01" id="home">
+            <img src="./images/img-welcome.jpg" alt="홈 화면이미지">
+            <p>Welcome!</p>
+        </section>
+        <section class="section sec02" id="introduce">
+            <div class="container">
+                <div class="sec-tit">
+                    <img src="./images/img-me.jpg" alt="내 사진">
+                    <h2>배우고 있는<br>개발자<br><span>김슬기</span>입니다.</h2>
+                </div>
+                <p>
+                많은 사용자들에게 보기 좋고, 편리한<br>
+                웹페이지를 만들기 위해서 지식을 <br>
+                배우고 있는 중입니다.
+                </p>
+            </div>
+        </section>
+        <section class="section sec03" id="lived">
+            <div class="container">
+                <h2>GRADUATION</h2>
+                <ul>
+                    <li>2010 풍무고등학교 졸업</li>
+                    <li>2010 호서대학교 컴퓨터공학과 입학</li>
+                    <li>2016 호서대학교 컴퓨터공학과 졸업</li>
+                </ul>
+                <h2>CERTIFICATION</h2>
+                <ul>
+                    <li>정보처리기사</li>
+                    <li>정교사 2급(전기, 전자, 통신)</li>
+                    <li>MOS Master</li>
+                    <li>한국사능력검정시험 2급</li>
+                    <li>한자 2급</li>
+                    <li>운전면허 1종 보통</li>
+                </ul>                
+            </div>
+        </section>
+        <section class="section sec04" id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <ul>
+                    <li>E-mail : rltmrl@gmail.com</li>
+                    <li>github : https://github.com/KimSrik</li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <i>
+                <ul>
+                    <li>경기도 김포시 풍무동 637</li>
+                    <li>e-mail : rltmrl2@gmail.com</li>
+                    <li>만든이 : 김슬기</li>
+                </ul>
+                <p>
+                    본 페이지는 상업적 용도로 제작되지 않았으며, 개인 연습용 용도로 제작되었습니다.
+                </p>
+            </i>
+        </footer>
     </section>
-    <section class="section" id="home">
-        <img src="./images/img-welcome.jpg" alt="홈 화면이미지">
-    </section>
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        let windowScrollTop;
+        $(window).scroll(function(){
+            windowScrollTop = $(window).scrollTop();
+            console.log(windowScrollTop);
+            if(windowScrollTop==0){
+                $('.header').css({
+                    backgroundColor : 'rgb(177, 177, 255)',
+                });
+                $('.nav-list li').css({
+                    color: '#000',
+                    backgroundColor: '#fff',
+                });
+            }else{
+                $('.header').css({
+                    backgroundColor : '#ffff7d',
+                });
+                $('.nav-list li').css({
+                    color: '#fff',
+                    backgroundColor: '#000',
+                });
+            }
+        })
+        
+    </script>
+    
 </body>
 </html>
